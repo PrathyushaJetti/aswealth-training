@@ -1,0 +1,113 @@
+
+ 
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;700;800&display=swap");
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+body {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.wrapper {
+    display: flex;
+    gap: 40px;
+}
+
+.card {
+    position: relative;
+    width: 350px;
+    height: 350px;
+
+}
+
+.face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 0.5s;
+
+}
+
+.card .front {
+    transform: perspective(600px) rotateY(0deg);
+    box-shadow: 0 5px 10px #fff;
+}
+
+.card .front img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.text-h1 {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.4);
+    text-align: center;
+}
+
+.card .back {
+
+    transform: perspective(600px) rotateY(180deg);
+    background:red;
+    padding: 10px;
+    color: white;
+
+    box-shadow: 0 5px 10px #fff;
+    overflow: auto;
+
+
+}
+
+.text-p {
+    text-decoration: fit-content;
+
+}
+
+
+
+
+
+.card .back .text-h2 {
+    font-size: 30px;
+    letter-spacing: 2px;
+}
+
+.card .back .text-p {
+    letter-spacing: 0.5px;
+    width: fit-content;
+    overflow-wrap: break-word;
+}
+
+.card:hover .front {
+    transform: perspective(600px) rotateY(180deg);
+}
+
+.card:hover .back {
+    transform: perspective(600px) rotateY(360deg);
+}
